@@ -30,7 +30,7 @@ public struct Configuration {
 ///
 /// - parameters:
 ///   - key: The key for a string in the default table.
-func LocalizedString(_ key: String) -> String {
+public func LocalizedString(_ key: String) -> String {
     
     return Configuration.localizeString(key)
 

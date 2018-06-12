@@ -140,7 +140,7 @@ class PermutationTests: XCTestCase {
     
     func testPermutationWithOptional() {
         
-        let permutation: Permutation = [
+        let permutation: Permutation<String, (), Character> = [
             
             (StringParser.character("a"), Character("_")),
             (StringParser.character("b"), nil),
@@ -203,7 +203,7 @@ class PermutationTests: XCTestCase {
     
     func testPermutationWithSeparatorAndOptional() {
         
-        let permutation: Permutation = [
+        let permutation: Permutation<String, (), Character> = [
             
             (StringParser.character("a"), nil),
             (StringParser.character("b"), Character("_")),
