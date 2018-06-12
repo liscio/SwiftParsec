@@ -23,3 +23,13 @@ extension Sequence where Iterator.Element == Int {
     }
     
 }
+
+extension CountableClosedRange where Bound == Int {
+    public var stringValue: String {
+        
+        let chars = map { Character(UnicodeScalar($0)!) }
+        
+        return String(chars)
+        
+    }
+}

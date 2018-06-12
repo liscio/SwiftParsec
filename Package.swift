@@ -1,3 +1,4 @@
+// swift-tools-version:4.0
 //
 //  Package.swift
 //  SwiftParsec
@@ -10,7 +11,17 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftParsec",
+    products: [
+        .library(name: "SwiftParsec", targets: ["SwiftParsec"]),
+        .library(name: "SwiftParsecLanguages", targets: ["SwiftParsecLanguages"])
+    ],
+    dependencies: [
+    ],
     targets: [
-        Target(name: "SwiftParsec"),
+        .target(name: "SwiftParsec"),
+        .target(name: "SwiftParsecLanguages", dependencies: ["SwiftParsec"]),
+
+        .testTarget(name: "SwiftParsecTests", dependencies: ["SwiftParsec"]),
+        .testTarget(name: "SwiftParsecLanguagesTests", dependencies: ["SwiftParsecLanguages"])
     ]
 )

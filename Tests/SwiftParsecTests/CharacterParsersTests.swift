@@ -56,7 +56,7 @@ class CharacterParsersTests: XCTestCase {
         let interval = StringParser.oneOf("a"..."z")
         
         // Test for success.
-        let matching = ["axyz", "éxyz", "ixyz", "oxyz", "uxyz"]
+        let matching = ["axyz", "exyz", "ixyz", "oxyz", "uxyz"]
         let errorMessage = "GenericParser.oneOf should succeed."
         
         testStringParserSuccess(interval, inputs: matching) { input, result in
@@ -74,7 +74,7 @@ class CharacterParsersTests: XCTestCase {
         }
         
         // Test for failure.
-        let notMatching = ["1xyzu", "?yzo", "Ezi", ")taeiou", "@vexyz"]
+        let notMatching = ["1xyzu", "éxyz", "?yzo", "Ezi", ")taeiou", "@vexyz"]
         let shouldFailMessage = "GenericParser.oneOf should fail."
         
         testStringParserFailure(interval, inputs: notMatching)
